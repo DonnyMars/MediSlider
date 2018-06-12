@@ -13,17 +13,24 @@
 
   </medi-slider>
 
-  <input type="submit"></input>
+  <button v-on:click="submit">Submit</button>
 
 
   </div>
 </template>
 
 <script>
-export default {
-  name: 'App',
 
+export default {
+  mounted () {
+
+
+   },
+  name: 'App',
+  
   data () {
+
+
       return {
       questions: [
           {id: 0, title: 'What are your energy levels?', value: 'Low', answers: ["Low", "Medium", "High"]},
@@ -41,15 +48,28 @@ export default {
 
   updateValue: function(updatedQuestion){
 
+    this.questions[updatedQuestion.id] = updatedQuestion;
 
+  },
 
-  this.questions[updatedQuestion.id] = updatedQuestion;
+  submit: function(){
+
+    axios({
+
+        method: 'post',
+        url: 'http://localhost/index2.php',
+
+        data: this.questions
+    });
+
 
   }
+
 
 
   }
 }
+
 </script>
 
 <style>

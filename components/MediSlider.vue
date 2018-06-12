@@ -17,27 +17,20 @@ export default {
   components: {
     vueSlider
   },
-  props: [
 
-  "question"
+  props: ["question"],
 
-  ],
+  //Mounts the local values of question. Fills the object so you can refer to it.
+  beforeMount(){
+    this.localQuestion = this.question;
+  },
 
   data () {
-
     return {
 
     mutableValue: this.question.value,
 
-    localQuestion: {
-
-    id: this.question.id,
-    title: this.question.title,
-    value: this.question.value,
-    answers: this.question.answers
-     
-
-    },
+    localQuestion: { },
 
     options: {
             width: "80%",
@@ -84,7 +77,7 @@ export default {
 
     mutableValue: function () {
 
-      console.log('change');
+      // console.log('change');
 
       this.localQuestion.value = this.mutableValue;
       this.$emit('changeValue', this.localQuestion);
