@@ -1,13 +1,14 @@
 <template>
   <div>
 
-  <h1>{{question.title}}</h1>
+  <h2 style="margin-left:10%; font-family:sans-serif;">{{question.title}}</h2>
   <br>
 
   <vue-slider ref="slider" v-model="mutableValue" v-bind="options"></vue-slider>
 
-
+  
   </div>
+
 </template>
 
 <script>
@@ -33,7 +34,7 @@ export default {
     localQuestion: { },
 
     options: {
-            width: "80%",
+            width: "60%",
             tooltip: "always",
             disabled: false,
             piecewise: true,
