@@ -8,13 +8,16 @@ import VueAxios from 'vue-axios'
 import App from './App'
 import router from './router'
 
+// Vue components imported.
 import MediSlider from './components/MediSlider.vue'
+import RecommendedTests from './components/RecommendedTests.vue'
 
-import Message from './components/Message.vue'
 
 Vue.use(VueAxios, axios);
-Vue.component('app-message', Message);
+
+// Vue components added to the instance.
 Vue.component('medi-slider', MediSlider);
+Vue.component('recommended-tests', RecommendedTests);
 
 Vue.config.productionTip = false
 

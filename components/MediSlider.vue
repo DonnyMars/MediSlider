@@ -1,14 +1,9 @@
 <template>
   <div>
-
-  <h2 style="margin-left:10%; font-family:sans-serif;">{{question.title}}</h2>
-  <br>
-
-  <vue-slider ref="slider" v-model="mutableValue" v-bind="options"></vue-slider>
-
-  
+      <h2 style="margin-left:10%; font-family:sans-serif;">{{question.title}}</h2>
+      <br>
+      <vue-slider ref="slider" v-model="mutableValue" v-bind="options"></vue-slider>
   </div>
-
 </template>
 
 <script>
